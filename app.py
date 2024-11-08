@@ -44,15 +44,15 @@ class Sale(db.Model):
     qty = db.Column(db.Integer, nullable=False)
     amount = db.Column(db.Float, nullable=False)
 
-# to create a tables
+# creating a tables
 with app.app_context():
     db.create_all()  
-    if not Company.query.first():  # Check if any company exists
+    if not Company.query.first():  # Checking if any company exists
         default_company = Company(name='Default Company', cash_balance=1000.0)
         db.session.add(default_company)
         db.session.commit()
 
-# now i have to create a views for Item, Purchases and  for Sales
+# now i have to create a views for Item, Purchases and then Sales
 @app.route('/')
 def index():
     company = Company.query.first()
@@ -71,7 +71,7 @@ def managing_items():
     items = Item.query.all()
     return render_template('items.html', items=items)
 
-# New route to delete an item
+# writing a new route to delete an item
 @app.route('/delete_item/<int:item_id>', methods=['POST'])
 def delete_item(item_id):
     item = Item.query.get(item_id)
