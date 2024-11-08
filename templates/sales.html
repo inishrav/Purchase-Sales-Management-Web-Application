@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2>Sell Items</h2>
+    <form method="POST" class="card p-4 shadow-sm mb-4">
+        <div class="form-group">
+            <label for="item_id" class="font-weight-bold">Item:</label>
+            <select name="item_id" class="form-control" required>
+                <option value="">Select Item</option>
+                {% for item in items %}
+                    <option value="{{ item.id }}">{{ item.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="qty" class="font-weight-bold">Quantity:</label>
+            <input type="number" class="form-control" name="qty" required min="1">
+        </div>
+        <div class="form-group">
+            <label for="rate" class="font-weight-bold">Rate (Rs.):</label>
+            <input type="number" class="form-control" name="rate" step="0.01" required min="0">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block font-weight-bold">Add Sale</button> <!-- Change to a matching color -->
+    </form>
+
+    <h3>Sales History</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr class="bg-primary text-white"> <!-- Change to a matching background color -->
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Rate (Rs.)</th>
+                <th>Amount (Rs.)</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sale in sales %}
+            <tr>
+                <td>{{ sale.item.name }}</td>
+                <td>{{ sale.qty }}</td>
+                <td>Rs. {{ sale.rate }}</td>
+                <td>Rs. {{ sale.amount }}</td>
+                <td>{{ sale.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5" class="text-center text-muted">No sales recorded</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

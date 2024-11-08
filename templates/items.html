@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center text-primary my-5 font-weight-bold">Manage Your Inventory</h2>
+    
+    <!-- Add Item Form -->
+    <form method="POST" class="card p-5 shadow-lg mb-5 border-0 rounded-lg bg-light">
+        <h5 class="font-weight-bold text-primary">Add a New Item</h5>
+        <div class="form-group">
+            <label for="name">Item Name:</label>
+            <input type="text" class="form-control rounded-pill" name="name" placeholder="e.g., Apple" required>
+        </div>
+        <div class="form-group">
+            <label for="rate">Rate (₹):</label>
+            <input type="number" class="form-control rounded-pill" name="rate" step="0.01" placeholder="e.g., 10.00" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block rounded-pill font-weight-bold">Add Item</button>
+    </form>
+
+    <!-- Items List -->
+    <h3 class="text-primary font-weight-bold mb-3">Current Items</h3>
+    <ul class="list-group shadow-sm">
+        {% for item in items %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="font-weight-bold">{{ item.name }} - ₹{{ item.rate }}</span>
+                <form action="{{ url_for('delete_item', item_id=item.id) }}" method="post">
+                    <button type="submit" class="btn btn-danger btn-sm rounded-pill">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

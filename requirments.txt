@@ -1,0 +1,24 @@
+// i am  going to give the list of python dependencies
+flask
+above the flask i used here for building the web application 
+and also it handles the entire applications and http requests .
+
+flask-sqlAlchemy
+here the flask-sqlalchemy is an extension mainly designed to integrate the sqlalchemy
+with a flask,in addition to ,this extension brings the ORM capabilities to work easily with the relational dbs.
+~pip install Flask-SQLAlchemy
+~
+
+
+in simple 
+Flask-it builds the web application
+Flask-SQLAlchemy --> it connects the application to a database for storing and retrieving the data ..
+
+
+
+python -m venv myenv; .\myenv\Scripts\Activate.ps1
+
+
+
+
+git config --global core.autocrlf true

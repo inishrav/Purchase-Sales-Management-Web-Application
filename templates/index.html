@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5">
+    <!-- Header Section -->
+    <div class="text-center">
+        <h1 class="display-4 mb-3 text-primary">Welcome to Namma Kadai</h1>
+        <p class="lead">Manage your inventory, purchases, and sales seamlessly.</p>
+        <hr class="my-4 w-50 mx-auto">
+    </div>
+
+    <!-- Current Cash Balance Card -->
+    <div class="card text-center mx-auto balance-card shadow-lg rounded-lg" style="max-width: 450px;">
+        <div class="card-body">
+            <h2 class="card-title text-primary">Current Cash Balance</h2>
+            <p class="card-text display-4 font-weight-bold text-success">Rs. {{ balance }}</p>
+        </div>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="row text-center mt-5">
+        <div class="col-md-4 mb-4">
+            <div class="card quick-link-card shadow-lg rounded-lg hover-zoom">
+                <div class="card-body">
+                    <i class="fas fa-box-open fa-3x text-primary mb-3 animated-icon"></i>
+                    <h5 class="card-title font-weight-bold">Manage Items</h5>
+                    <p class="card-text">Add, edit, and remove items from your inventory.</p>
+                    <a href="{{ url_for('managing_items') }}" class="btn btn-outline-primary btn-rounded">Go to Items</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card quick-link-card shadow-lg rounded-lg hover-zoom">
+                <div class="card-body">
+                    <i class="fas fa-cart-plus fa-3x text-success mb-3 animated-icon"></i>
+                    <h5 class="card-title font-weight-bold">Add Purchase</h5>
+                    <p class="card-text">Record purchases and update stock easily.</p>
+                    <a href="{{ url_for('add_purchase') }}" class="btn btn-outline-success btn-rounded">Go to Purchases</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card quick-link-card shadow-lg rounded-lg hover-zoom">
+                <div class="card-body">
+                    <i class="fas fa-shopping-bag fa-3x text-danger mb-3 animated-icon"></i>
+                    <h5 class="card-title font-weight-bold">Add Sale</h5>
+                    <p class="card-text">Record sales transactions and update inventory.</p>
+                    <a href="{{ url_for('add_sale') }}" class="btn btn-outline-danger btn-rounded">Go to Sales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
