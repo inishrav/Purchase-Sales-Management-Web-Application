@@ -1,4 +1,4 @@
-# Namma Kadai Inventory Management System
+ # Namma Kadai Inventory Management System
 
 Welcome to **Namma Kadai** – an inventory management system built using Flask and SQLAlchemy to manage items, purchases, and sales, as well as track cash balance in real time.
 
