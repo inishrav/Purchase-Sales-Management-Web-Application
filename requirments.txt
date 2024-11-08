@@ -9,16 +9,11 @@ with a flask,in addition to ,this extension brings the ORM capabilities to work 
 ~pip install Flask-SQLAlchemy
 ~
 
-
 in simple 
 Flask-it builds the web application
 Flask-SQLAlchemy --> it connects the application to a database for storing and retrieving the data ..
 
-
-
 python -m venv myenv; .\myenv\Scripts\Activate.ps1
 
-
-
-
 git config --global core.autocrlf true
+
