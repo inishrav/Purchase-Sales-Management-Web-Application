@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!--it ensures a wide range of characters,including special characters and symbols-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namma Kadai</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Additional Custom Styles */
+    
         .hover-zoom:hover {
             transform: scale(1.05);
             transition: all 0.3s ease-in-out;
@@ -53,6 +54,7 @@
             <nav>
                 <a href="{{ url_for('index') }}" class="text-white mx-3">Home</a>
                 <a href="{{ url_for('managing_items') }}" class="text-white mx-3">Items</a>
+                <!--here the mx means margin on the x axis mainly used to add the contents for both left an dthen right of the element-->
                 <a href="{{ url_for('add_purchase') }}" class="text-white mx-3">Purchases</a>
                 <a href="{{ url_for('add_sale') }}" class="text-white mx-3">Sales</a>
             </nav>
@@ -60,10 +62,16 @@
     </header>
 
     <div class="d-flex">
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar Navigation and here the aside is mainly used for the sidebars also -->
         <aside class="bg-light p-4" style="width: 250px;">
             <h5 class="font-weight-bold text-primary">Navigation</h5>
             <ul class="list-unstyled mt-3">
+                <!--here the my is margin-top-->
+
+                <!--here the list unstyled means it completely removes the bullet points and then numbers 
+                and it creates a space above the content and it makes it clear 
+             -->
+                <!--here we are having the margin-top,bottom,left,right-->
                 <li class="mb-2">
                     <a href="{{ url_for('index') }}" class="d-flex align-items-center text-dark">
                         <i class="fas fa-home mr-2"></i> Home
@@ -72,11 +80,13 @@
                 <li class="mb-2">
                     <a href="{{ url_for('managing_items') }}" class="d-flex align-items-center text-dark">
                         <i class="fas fa-boxes mr-2"></i> Manage Items
+                        <!--mr-2 here 2 refers to rem it take the root element it default is 16px-->
                     </a>
                 </li>
                 <li class="mb-2">
                     <a href="{{ url_for('add_purchase') }}" class="d-flex align-items-center text-dark">
                         <i class="fas fa-cart-plus mr-2"></i> Purchases
+                        <!--The class fas fa-cart-plus displays cart-plus icon and mr-2 ir=t measn margin rightnd main purpose is to  add a margin to the right of the icon-->
                     </a>
                 </li>
                 <li class="mb-2">
@@ -87,7 +97,8 @@
             </ul>
         </aside>
 
-        <!-- Main Content Section -->
+        <!-- Main element -->
+         <!--here the flex-fill means it is used to fill the available space and also for that i am using the padding -->
         <main class="flex-fill p-4">
             {% block content %}{% endblock %}
         </main>
@@ -95,3 +106,9 @@
 
 </body>
 </html>
+
+<!--using bootstrap we can design the webpage nd mainly for structure nd styling,aligning header fo all those things we are using this,and it is the framework of html and css-->
+
+    <!-- Bootstrap JS nd then Popper.js (if using interactive components)
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->

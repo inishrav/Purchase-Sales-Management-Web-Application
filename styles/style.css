@@ -80,7 +80,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Input & Table Styles */
+/* Input and Table Styles */
 form label {
     font-weight: 600;
 }
@@ -110,7 +110,7 @@ input, select, .form-control {
     background-color: #f9f9f9;
 }
 
-/* Quick Links Styling */
+/* quick links styling */
 .quick-link-card {
     padding: 20px;
     transition: all 0.3s ease;
@@ -130,7 +130,7 @@ input, select, .form-control {
     color: #333;
 }
 
-/* Button and Hover Effects */
+/* button and hover effects */
 .btn-outline-primary, .btn-outline-success, .btn-outline-danger {
     font-size: 1em;
     font-weight: bold;
@@ -142,7 +142,7 @@ input, select, .form-control {
     color: #fff;
 }
 
-/* List Item Styles */
+/* List Item Styles*/
 .list-group-item {
     padding: 15px 20px;
     border-radius: 4px;
@@ -164,3 +164,4 @@ input, select, .form-control {
 .btn-danger:hover {
     background-color: #c9302c;
 }
+

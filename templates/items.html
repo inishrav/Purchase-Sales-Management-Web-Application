@@ -3,7 +3,7 @@
 <div class="container">
     <h2 class="text-center text-primary my-5 font-weight-bold">Manage Your Inventory</h2>
     
-    <!-- Add Item Form -->
+    <!-- we can add the items here nd giving the options delete also if you make any mistakes you can delete that and you can add new one -->
     <form method="POST" class="card p-5 shadow-lg mb-5 border-0 rounded-lg bg-light">
         <h5 class="font-weight-bold text-primary">Add a New Item</h5>
         <div class="form-group">
@@ -17,7 +17,7 @@
         <button type="submit" class="btn btn-primary btn-block rounded-pill font-weight-bold">Add Item</button>
     </form>
 
-    <!-- Items List -->
+    <!-- items lists -->
     <h3 class="text-primary font-weight-bold mb-3">Current Items</h3>
     <ul class="list-group shadow-sm">
         {% for item in items %}

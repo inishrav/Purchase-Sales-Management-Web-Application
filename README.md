@@ -45,10 +45,6 @@ Namma Kadai is a web-based inventory management system designed to streamline th
       ```bash
       .\myenv\Scripts\Activate.ps1
       ```
-    - **MacOS/Linux**:
-      ```bash
-      source myenv/bin/activate
-      ```
 
 4. Install the required dependencies:
     ```bash

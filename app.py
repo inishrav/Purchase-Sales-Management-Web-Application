@@ -44,15 +44,15 @@ class Sale(db.Model):
     qty = db.Column(db.Integer, nullable=False)
     amount = db.Column(db.Float, nullable=False)
 
-# creating a tables
+# to create a tables
 with app.app_context():
     db.create_all()  
-    if not Company.query.first():  # Checking if any company exists
+    if not Company.query.first():  # Check if any company exists
         default_company = Company(name='Default Company', cash_balance=1000.0)
         db.session.add(default_company)
         db.session.commit()
 
-# now i have to create a views for Item, Purchases and then Sales
+# now i have to create a views for Item, Purchases and  for Sales
 @app.route('/')
 def index():
     company = Company.query.first()
@@ -71,7 +71,7 @@ def managing_items():
     items = Item.query.all()
     return render_template('items.html', items=items)
 
-# writing a new route to delete an item
+# New route to delete an item
 @app.route('/delete_item/<int:item_id>', methods=['POST'])
 def delete_item(item_id):
     item = Item.query.get(item_id)
@@ -113,7 +113,7 @@ def add_sale():
         
         # Update item quantity and company balance
         item = Item.query.get(item_id)
-        item.qty -= qty  # deduct sold quantity from stock
+        item.qty -= qty  # it is used to deduct sold quantity from stock
         company = Company.query.first()
         company.cash_balance += amount  # above it will display the purchase cost
 
@@ -126,3 +126,5 @@ def add_sale():
 
 if __name__ == '__main__':
     app.run(debug=True)
+#here the debug=True is mainly for restarting the servers and it is used to debug also
+

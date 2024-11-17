@@ -20,13 +20,13 @@
             <label for="rate" class="font-weight-bold">Rate (Rs.):</label>
             <input type="number" class="form-control" name="rate" step="0.01" required min="0">
         </div>
-        <button type="submit" class="btn btn-primary btn-block font-weight-bold">Add Purchase</button>
+        <button type="submit" class="btn btn-primary btn-block font-weight-bold">Add Purchase</button> <!-- Changed to btn-primary -->
     </form>
 
     <h3>Purchases History</h3>
     <table class="table table-striped">
         <thead>
-            <tr class="bg-primary text-white">
+            <tr class="bg-primary text-white"> <!-- Changed to bg-primary -->
                 <th>Item</th>
                 <th>Quantity</th>
                 <th>Rate (Rs.)</th>
@@ -42,6 +42,8 @@
                 <td>Rs. {{ purchase.rate }}</td>
                 <td>Rs. {{ purchase.amount }}</td>
                 <td>{{ purchase.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <!--it is used in a Jinja template to formatting the timestamp and it retrieve the datetime object
+                whatever we are modifying it is used for the purpose to track and store the dataa nd time -->
             </tr>
             {% else %}
             <tr>
@@ -52,3 +54,5 @@
     </table>
 </div>
 {% endblock %}
+
+
